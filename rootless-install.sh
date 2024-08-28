@@ -222,7 +222,7 @@ exec_setuptool() {
 	(
 		set -x
   		echo $BIN
-		PATH="$BIN:$PATH" "$BIN/dockerd-rootless-setuptool.sh" install "$@"
+		PATH="$BIN:$PATH" "$BIN/contrib/dockerd-rootless-setuptool.sh" install "$@"
 	)
 }
 
@@ -246,8 +246,6 @@ do_install() {
 		cd "$BIN"
 		tar zxf "$tmp/docker.tgz" --strip-components=1
 		tar zxf "$tmp/rootless.tgz" --strip-components=1
-  		ls -ltr
-    		pwd
 	)
 
 	exec_setuptool "$@"
