@@ -21,11 +21,11 @@ SCRIPT_COMMIT_SHA=UNKNOWN
 # This script should be run with an unprivileged user and install/setup Docker under $HOME/bin/.
 
 # latest version available in the stable channel.
-STABLE_LATEST="27.1.2"
-TARUN_LATEST="27.1.3"
+STABLE_LATEST="27.2.0"
+
 
 # latest version available in the test channel.
-TEST_LATEST="27.1.2"
+TEST_LATEST="27.2.0"
 
 
 # The channel to install from:
@@ -42,12 +42,12 @@ case "$CHANNEL" in
     "stable")
         echo "# Installing stable version ${STABLE_LATEST}"
         STATIC_RELEASE_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-${STABLE_LATEST}.tgz"
-        STATIC_RELEASE_ROOTLESS_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-rootless-extras-${TARUN_LATEST}.tgz"
+        STATIC_RELEASE_ROOTLESS_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-rootless-extras-${STABLE_LATEST}.tgz"
         ;;
     "test")
         echo "# Installing test version ${TEST_LATEST}"
         STATIC_RELEASE_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-${TEST_LATEST}.tgz"
-        STATIC_RELEASE_ROOTLESS_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-rootless-extras-${TARUN_LATEST}.tgz"
+        STATIC_RELEASE_ROOTLESS_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-rootless-extras-${TEST_LATEST}.tgz"
         ;;
     *)
         >&2 echo "Aborting because of unknown CHANNEL \"$CHANNEL\". Set \$CHANNEL to either \"stable\" or \"test\"."
