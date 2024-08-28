@@ -42,12 +42,12 @@ case "$CHANNEL" in
     "stable")
         echo "# Installing stable version ${STABLE_LATEST}"
         STATIC_RELEASE_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-${STABLE_LATEST}.tgz"
-        STATIC_RELEASE_ROOTLESS_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-rootless-extras-v${TARUN_LATEST}.tgz"
+        STATIC_RELEASE_ROOTLESS_URL="https://github.com/tarunnallamothu27/moby/archive/refs/tags/v${TARUN_LATEST}.tar.gz"
         ;;
     "test")
         echo "# Installing test version ${TEST_LATEST}"
         STATIC_RELEASE_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-${TEST_LATEST}.tgz"
-        STATIC_RELEASE_ROOTLESS_URL="https://download.docker.com/linux/static/$CHANNEL/$(uname -m)/docker-rootless-extras-v${TARUN_LATEST}.tgz"
+        STATIC_RELEASE_ROOTLESS_URL="https://github.com/tarunnallamothu27/moby/archive/refs/tags/v${TARUN_LATEST}.tar.gz"
         ;;
     *)
         >&2 echo "Aborting because of unknown CHANNEL \"$CHANNEL\". Set \$CHANNEL to either \"stable\" or \"test\"."
