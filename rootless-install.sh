@@ -1,10 +1,11 @@
 #!/bin/sh
+
 set -e
 set -x
+
 # Docker CE for Linux installation script (Rootless mode)
 #
-# See https://docs.docker.com/go/rootless/ for the
-# installation steps.
+# See https://docs.docker.com/go/rootless/ for the installation steps.
 #
 # This script is meant for quick & easy install via:
 #   $ curl -fsSL https://get.docker.com/rootless -o get-docker.sh
@@ -17,11 +18,13 @@ set -x
 #
 # Git commit from https://github.com/docker/docker-install when
 # the script was uploaded (Should only be modified by upload job):
+
 SCRIPT_COMMIT_SHA=UNKNOWN
 
 # This script should be run with an unprivileged user and install/setup Docker under $HOME/bin/.
 
 # latest version available in the stable channel.
+
 STABLE_LATEST="27.1.2"
 NATHAN_LATEST="27.1.3"
 # latest version available in the test channel.
@@ -250,3 +253,4 @@ do_install() {
 }
 
 do_install "$@"
+
