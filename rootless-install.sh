@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+set -x
 # Docker CE for Linux installation script (Rootless mode)
 #
 # See https://docs.docker.com/go/rootless/ for the
